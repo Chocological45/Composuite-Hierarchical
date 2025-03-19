@@ -1,4 +1,9 @@
-# CompoSuite
+# CompoSuite - Hierarchical
+This repository contains a customized version of the Composuite benchmark. In this benchmark, the PickPlace task has been subdivided into several sub-tasks based on the reward-shaping technique that was used originally. This results in a hierarchical curriculum that can be learned in one or many agents, to test hierarchical forward transfer.
+
+Original Composuite README:
+---
+
 
 This repository contains the official release of 
 [CompoSuite: A Compositional Reinforcement Learning Benchmark](https://arxiv.org/pdf/2207.04136.pdf). We include pre-trained models from our CoLLAs-22 paper in our accompanying data repository, [CompoSuite-Data](https://github.com/Lifelong-ML/CompoSuite-Data), and the multi-task and compositional PPO implementations in our adaptation of Spinning Up, [CompoSuite-spinningup](https://github.com/Lifelong-ML/CompoSuite-spinningup).

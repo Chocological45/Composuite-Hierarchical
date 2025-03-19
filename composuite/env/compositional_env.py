@@ -276,7 +276,7 @@ class CompositionalEnv(SingleArmEnv):
 
             @sensor(modality=modality)
             def subtask_id(obs_cache):
-                onehot = np.zeros(4)
+                onehot = np.zeros(9)
                 onehot[self.subtask_id] = 1
                 return onehot
 
@@ -542,8 +542,8 @@ class CompositionalEnv(SingleArmEnv):
         reward = float(self._check_success())
         # add in shaped re  wards
         if reward < 1 and self.reward_shaping:
-            staged_rewards = self.staged_rewards(action)
-            reward += max(staged_rewards)
+            staged_rewards = self.staged_rewards(action)    # Get tuple of intermediary rewards
+            reward += max(staged_rewards) # Get maximum of intermediary rewards and add
             self.step_counter += 1
         if self.reward_scale is not None:
             reward *= self.reward_scale

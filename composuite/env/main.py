@@ -11,7 +11,7 @@ AVAILABLE_ROBOTS = ["IIWA", "Jaco", "Kinova3", "Panda"]
 AVAILABLE_OBSTACLES = [None, "None", "GoalWall",
                        "ObjectDoor", "ObjectWall"]
 AVAILABLE_OBJECTS = ["Box", "Dumbbell", "Plate", "Hollowbox"]
-AVAILABLE_TASKS = ["PickPlace", "Push", "Shelf", "Trashcan"]
+AVAILABLE_TASKS = ["PickPlace", "Push", "Shelf", "Trashcan", "Reach", "Grasp", "Lift", "Approach", "Lower"]
 
 
 def make(robot="IIWA", obj="Box", obstacle=None, 
@@ -76,6 +76,17 @@ def make(robot="IIWA", obj="Box", obstacle=None,
         options["env_name"] = "ShelfSubtask"
     elif task == "Trashcan":
         options["env_name"] = "TrashcanSubtask"
+
+    elif task == "Reach":
+        options["env_name"] = "ReachSubtask"
+    elif task == "Grasp":
+        options["env_name"] = "GraspSubtask"
+    elif task == "Lift":
+        options["env_name"] = "LiftSubtask"
+    elif task == "Approach":
+        options["env_name"] = "ApproachSubtask"
+    elif task == "Lower":
+        options["env_name"] = "LowerSubtask"
     else:
         raise NotImplementedError
 
